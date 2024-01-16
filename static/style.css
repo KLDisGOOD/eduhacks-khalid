@@ -1,0 +1,655 @@
+
+
+        
+
+        /* Define the container for the scaled content */
+        body {
+            cursor: url('images/Black Circle.svg'),auto;
+       }
+
+
+       .container {
+           position: relative;
+           width: 500px; /* Original width */
+           height: 323px; /* Original height */
+           transform: scale(1.7); /* Apply the scale factor */
+           transform-origin: top left; /* Set the scaling origin */
+           background: linear-gradient(to right, rgba(78, 44, 84, 0.91), rgba(107, 5, 123, 0.33));
+           border-radius: 10px; /* Rounded corners */
+           /*Black stroke around the container*/
+           border: 1px solid black;
+           
+
+       }
+
+       
+
+       /* Define the box with the specified dimensions and position */
+
+       #overlayforterm {
+        position: absolute;
+        top: 35px;
+        left: 231px;
+        width: 251px;
+        height: 159px;
+        border-radius: 10px;
+        background-color: black; /* Adjust this to match your terminal background color */
+        opacity: 1; /* Adjust the opacity as desired */
+        box-shadow: 3px 5px 20px 5px rgba(0, 0, 0, 0.5); /* Drop shadow effect */
+        z-index: 1;
+    }
+
+       #terminal {
+           position: absolute;
+           width: 232px;
+           height: 120px;
+           left: 240px;
+           top: 50px;
+           
+           z-index: 5;
+       }
+
+       .titlebar {
+           position: absolute;
+           width: 500px;
+           height: 19px;
+           left: -1px;
+           top: 0px;
+           background-color: rgba(84, 68, 87, 0.93);
+           border-radius: 10px 10px 0px 0px;
+           border: 1px solid black;
+           border-bottom: none;
+       }
+
+
+       .line {
+           left: 211px;
+           top: 21px;
+           position: absolute;
+           width: 1px;
+           height: 302px;
+           
+           stroke: rgba(116, 116, 116, 0.39);
+           background-color: rgba(101, 77, 116, 0.562);
+       }
+
+       .title {
+           position: absolute;
+           width: 211px;
+           height: 32px;
+           left: 0px;
+           top: 20px;
+           background-color: rgba(0, 0, 0, 0.11);
+       }
+
+       .vuba {
+           position: relative;
+           user-select: none;
+           font-family: "Michroma", serif;
+           color: black;
+           font-weight: 10000;
+           width: 83px;
+           height: 32px;
+           left: 117px;
+           top: 20px;
+           font-size: 20px;
+       }
+
+       .menubutton {
+
+           position: absolute;
+           width: 36px;
+           height: 29px;
+           left: 10px;
+           top: 21px;
+           user-select: none;
+           background-color: transparent;
+           border: none;
+           cursor: url('images/Black Circle.svg'),auto;
+           
+
+
+       }
+
+      
+
+       
+
+       .menu {
+           position: relative;
+           width: 36px;
+           height: 29px;
+           top: -1px;
+           left: -6px;
+           
+           user-select: none;
+           
+           
+       }
+
+       .menubutton:hover {
+           
+ }
+       .menubutton:hover .menu {
+   opacity: 0.7; /* Adjust the opacity value as needed */
+   
+ }
+
+       .input-box {
+           position: absolute;
+           width: 170px;
+           height: 46px;
+           left: 10px;
+           top: 261px;
+           background-image: rgb(62, 23, 70, 1);
+           background-color: rgba(70, 28, 77, 0.26);
+           border-radius: 11px;
+           border: 2px rgba(248, 248, 248, 0);
+           font-family: "Inter", serif;
+           font-size: 8px;
+           color: rgb(32, 14, 36);
+           overflow: hidden;
+           resize: none;
+           
+                       
+       }       
+
+       .input-box:focus {
+           outline: none;
+
+           
+       }
+
+       .input-box::placeholder {
+           position: relative;
+           color: rgba(40, 11, 48, 0.678);
+           font-family: "Inter", serif;
+           font-size: 8px;
+           top: 94%; /* Position placeholder in the middle */
+           transform: translateY(-120%); /* Center vertically */
+           left: 10px; /* Adjust the value as needed */
+           z-index: 1;
+           user-select: none;  
+}
+       .input-box:focus::placeholder {
+           color: rgba(40, 11, 48, 0.678);
+           font-family: "Inter", serif;
+           font-size: 8px;
+           top: 94%; /* Position placeholder in the middle */
+           transform: translateY(-120%); /* Center vertically */
+           left: 10px; /* Adjust the value as needed */
+           z-index: 1;
+           user-select: none;  
+       }
+
+
+       .input-box:hover {
+           cursor: url('images/Black Circle.svg'),auto;
+       }
+       /*make the cursor at the bottom*/
+       
+
+       .github {
+
+           position: absolute;
+           height: 20px;
+           width: 20px;
+           left: 462px;
+           top: 244px;
+           user-select: none;
+           cursor: url('images/Black Circle.svg'),auto;
+           
+
+
+       }
+       .insta {
+
+           position: absolute;
+           height: 20px;
+           width: 20px;
+           left: 462px;
+           top: 266px;
+           user-select: none;
+           cursor: url('images/Black Circle.svg'),auto;
+
+       }
+       .telegram {
+
+           position: absolute;
+           height: 17px;
+           width: 17px;
+           left: 462px;
+           top: 288px;
+           user-select: none;
+           cursor: url('images/Black Circle.svg'),auto;
+
+       }
+       
+       .oubapfp {
+           position: absolute;
+           width: 24px;
+           height: 24px;
+           left: 226px;
+           top: 280px;
+           background-color: rgba(195, 195, 195, 0.03); /* Set the background color for the circle */
+           border-radius: 50%; /* Make it a circle using border-radius */
+           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Apply the drop shadow */
+           user-select: none;
+           }
+       
+       .oubapfpimg   { 
+           position: relative;
+           width: 16px;
+           height: 16px;
+           top: 5px;
+           left: 4px;
+
+           user-select: none;
+           }
+       
+       .oubachat {
+           position: absolute;
+           width: 172px;
+           height: 92px;
+           left: 256px;
+           top: 211px;
+           background-color: rgba(73, 69, 69, 0.47);
+           border-radius: 20px 20px 20px 0px;
+       }
+       
+       .sendbutton {
+           position: absolute;
+           width: 21px;
+           height: 21px;
+           left: 187px;
+           top: 289px;
+           background-color: rgba(70, 28, 77, 0.13); /* Set the background color for the circle */
+           border-radius: 50%; /* Make it a circle using border-radius */
+/* Apply the drop shadow */
+           user-select: none;
+           border: none;
+           cursor: url('images/Black Circle.svg'),auto;
+
+           }
+       .sendbutton:hover {
+           background-color: rgba(70, 28, 77, 0.2); /* Set the background color for the circle */
+           border-radius: 50%; /* Make it a circle using border-radius */
+           
+       }
+
+       .sendbutton:active {
+
+   background-color: rgba(70, 28, 77, 0.29);
+           
+       }
+       .sendbuttonimage   { 
+           position: relative;
+           width: 17px;
+           height: 16px;
+           top: 1px;
+           left: -2px;
+           
+           user-select: none;
+           }
+
+       .closebutton {
+           position: absolute;
+           width: 26px;
+           height: 15px;
+           left: 471px;
+           top: 3px;
+           user-select: none;
+       }
+
+       .maximizebutton {
+           position: absolute;
+           width: 25px;
+           height: 15px;
+           left: 457px;
+           top: 3px;
+           user-select: none;
+       }
+
+       .minimizebutton {
+           position: absolute;
+           width: 25px;
+           height: 15px;
+           left: 442px;
+           top: 3px;
+           user-select: none;
+           
+       }
+
+
+       /*MENU SHIT */
+
+       .menuslide {
+           position: relative;
+           width: 212px; /* Original width */
+           height: 303px; /* Original height */
+           top: -40px;    
+           z-index: 2;
+           background: rgb(17,9,28);
+           border-radius: 0px 0px 0px 10px; /* Rounded corners */
+           transition: 0.3s ease-in-out;
+           transform: translateX(-220px);
+
+           
+           
+
+           
+           /*Black stroke around the container*/
+           
+       }
+       
+
+       .welcomeusertext
+       {
+           position: relative;
+           user-select: none;
+           font-family: "Inter", serif;
+           background-clip: text;
+           -webkit-background-clip: text; /* For some webkit-based browsers like Safari */
+           color: transparent; /* Make the text transparent to allow the gradient to show through */
+           background-image: linear-gradient(to bottom, rgba(102, 102, 102, 1), rgba(49, 23, 53, 1), rgba(67, 36, 72, 1), rgb(113, 73, 121));
+           
+           left: 14px;
+           top: 20px;
+           font-size: 36px;
+
+
+       }
+       .menuline {
+           width: 212px;
+           height: 1px;
+           background-color: rgba(139, 89, 148, 0.58);
+           top: 305px;
+
+       }
+
+       .resetbutton {
+
+           position: relative;
+           top: 144px;
+           left: -8px;
+           width: 184px;
+           height: 30px;
+           background-color: rgba(129, 129, 129, 0.26);
+           border-radius: 8px;
+           border: none;
+           transition: background-color 0.3s ease-in-out;
+           cursor: url('images/Black Circle.svg'),auto;
+       }
+       /*animation*/
+       @keyframes resetbuttonclick
+       {
+           0% {background-color: rgba(97, 96, 96, 0.26);}
+           100% {background-color: rgba(68, 68, 68, 0.26);}
+       }
+       @keyframes resetbuttonhover
+       {
+           0% {background-color: rgba(129, 129, 129, 0.26);}
+           100% {background-color: rgba(97, 96, 96, 0.26);}
+       }
+       
+
+       .resetbutton:hover {
+           animation: resetbuttonhover 0.25s ease-in;
+           background-color: rgba(97, 96, 96, 0.26);
+           transition: background-color 0.1s ease-in;
+
+       }
+       
+
+       .resetbutton:active {
+           animation: resetbuttonclick 0.1s ease-in ;;
+           background-color: rgba(68, 68, 68, 0.26);
+           transition: background-color 0.1s ease-in;
+       }
+
+       .resetconversation {
+
+           position: relative;
+           top: -1px;
+           font-size: 11px;
+           font-family: "Inter", serif;
+           font-weight: 500;
+       }
+       .manageuserbutton {
+               
+               position: relative;
+               top: -24px;
+               left: 187px;
+               width: 18px;
+               height: 16px;
+               background-color: transparent;
+               border-radius: 8px;
+               border: none;
+               cursor: url('images/Black Circle.svg'),auto;
+       }
+       .manageuserimg {
+           position: relative;
+           top: -1px;
+           left: -6px;
+           width: 18px;
+           height: 16px;
+       }
+       .menuignore {
+           position: absolute;
+           width: 25px;
+           height: 20px;
+           top: 24px;
+           left: 12px;
+           z-index: 3;
+           opacity: 0;
+           cursor: url('images/Black Circle.svg'),auto;
+           
+
+           
+       }
+       
+       
+       .menuignore:checked ~ .menuslide {
+           transform: translateX(0);
+           box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.774);
+           
+       }
+       .menuignore:checked ~ .menuareaclick {
+           background-color: rgba(0, 0, 0, 0.546);
+           z-index: 7;
+           
+       }
+       
+       
+       .menuareaclick {
+           position: absolute;
+           width: 288px;
+           height: 304px;
+           top: 20px;
+           left: 212px;
+           z-index: 4;
+           opacity: 1;
+           border: none;
+           border-radius: 0px 0px 10px 0px;
+           cursor: url('images/Black Circle.svg'),auto;
+           transition: 0.4s ease-in-out;
+           background-color: rgba(0, 0, 0, 0);
+           
+       }
+      
+    /* This section is for typing animation*/
+
+       .typing {
+        opacity: 1;
+        transition: opacity 2s ease-in-out;
+       }
+       .hidden {
+        opacity: 0;
+       }
+
+       .circle {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #888;
+        margin: 1px;
+       }
+
+       .circle.scaling {
+        animation: typing 1000ms ease-in-out infinite ;
+        animation-delay: 3600ms;
+       }
+
+       .circle.bouncing {
+        animation: bounce 1000ms ease-in-out infinite ;
+        animation-delay: 3600ms;
+       }
+
+       circle:nth-child(1) {
+        animation-delay: 0ms;
+       }
+       circle:nth-child(2) {
+        animation-delay: 333ms;
+       }
+       circle:nth-child(3) {
+        animation-delay: 666ms;
+       }
+
+       @keyframes typing {
+        0% {
+            transform:scale(1);
+        }
+        33% {
+            transform:scale(1);
+        }
+        50% {
+            transform:scale(1.4);
+        }
+        100% {
+            transform:scale(1);
+        }
+       }
+
+        @keyframes bounce {
+            0% {
+                transform:translateY(0);
+            }
+            33% {
+                transform:translateY(0);
+            }
+            50% {
+                transform:translateY(-10px);
+            }
+            100% {
+                transform:translateY(0);
+            }
+        }
+        /*Done*/
+
+        /*This section is for the chatbox*/
+        .chatbox {
+            position: absolute;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 212px;
+            height: 203px;
+            left: 0px;
+            top: 51px;
+            background-color: rgba(0, 0, 0, 0);
+
+
+        }
+        .chatbox::-webkit-scrollbar {
+            width: 1px;
+            background-color: rgb(0, 0, 0);
+        }
+
+
+        .chat-wrapper {
+            position: relative;
+            left: -60px;
+            padding: 10px;
+            display: flex;
+        }
+
+
+
+        
+        .chat-reply {
+            position: relative;
+            left: 30px;
+            padding: 10px;
+            border-radius: 15px 15px 15px 0px;
+            background: rgba(73, 69, 69, 0.47);
+            max-width: 60%;
+            align-items: center; 
+                  
+            font-size: 8px;
+            font-family: "Inter", serif;
+        }
+        .chat-wrapper-sent {
+            position: relative;
+            left: 37px;
+            top: 5px;
+            padding: 10px;
+            display: flex;
+            align-items:end;
+            justify-content: center;
+            margin-right: auto;
+        }
+        .chat-sent {
+            padding: 10px;
+            background: rgba(73, 69, 69, 0.47);
+            max-width: 45%;
+            width: 100%;
+            font-size: 8px;
+            font-family: "Inter", serif;
+            border-radius: 15px 15px 0px 15px;
+            color: black;
+            margin-right: auto;
+        }
+
+        .chat-time {
+            position: absolute;
+            font-size: 5px;
+            top: 5px;
+            left: 3px;
+        }
+
+        .userpfp {
+            position:sticky;
+           width: 24px;
+           height: 24px;
+           left: 183px;
+           background-color: rgba(195, 195, 195, 0.03); /* Set the background color for the circle */
+           border-radius: 50%; /* Make it a circle using border-radius */
+           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Apply the drop shadow */
+           user-select: none;
+           
+        }
+
+        .userpfpimg {
+            position: absolute;
+            left: 1px;
+            top: 2px;
+        }
+
+        .vubapfp {
+        
+                position:sticky;
+               width: 24px;
+               height: 24px;
+               left: -500px;
+               background-color: rgba(195, 195, 195, 0.03); /* Set the background color for the circle */
+               border-radius: 50%; /* Make it a circle using border-radius */
+               box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Apply the drop shadow */
+               user-select: none;
+               
+        }
+
+        .vubapfpimg {
+            position: absolute;
+            left: 4px;
+            top: 6px;
+        }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200..700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
+    <link rel="stylesheet" href="static/style.css">
+    
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css">
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <script src="node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+    
+    <lint rel="script" href="frontend.js">
+    <meta charset="UTF-8">
+    <title>HTML Document</title>
+
+</head>
+<body>
+    <!-- Container for scaled content -->
+    <div class="container">
+        <!-- Your existing content goes here -->
+        <div class="content">
+            
+        </div>
+
+        <!-- Black box with drop shadow and rounded corners -->
+        
+        <input type="checkbox" class="menuignore" id="menuignore">
+        <div class="toggle"></div>
+        <button id="sendbutton" class="sendbutton" draggable="false" onclick="sendbaby()"> <img src="images/Sent.svg" class="sendbuttonimage" draggable="false"></button>
+        <div class="box" id="terminal"></div> 
+        <div id='overlayforterm'></div>
+        <div class="titlebar"></div>
+        <div class="line"></div>
+        <div class="title"></div>
+        <img src="images/Vuba.svg" class="vuba" draggable="false">
+        <textarea   type="text" placeholder="Ask me to do anything..." id="mytextarea" class="input-box"  name="prompt"></textarea>
+     <a href="https://github.com/kldm" draggable="false">  <img src="images/GitHub.svg" class="github" draggable="false">
+     </a>
+        <a href="https://instagram.com" draggable="false"> <img src="images/Instagram.svg" class="insta" draggable="false">
+        </a>
+
+       <a href="https://telegram.org" draggable="false"><img src="images/Telegram App.svg" class="telegram" draggable="false">
+       </a>
+        
+        <button class="menubutton" id="menubutton" draggable="false" ><img src="images/Menu.svg" class="menu" draggable="false"></button>
+         
+         <div class="oubapfp"><img src="images/O.svg" class="oubapfpimg"></div>
+         <div class="oubachat"></div>
+         <div class="overlay" id="overlay"></div>
+         <!--   Title bar   -->
+         <img src="images/MacOS Close.svg" class="closebutton" draggable="false">
+         <img src="images/Maximize Window.svg" class="maximizebutton" draggable="false">
+         <img src="images/MacOS Minimize.svg" class="minimizebutton" draggable="false">
+         <div id="chatbox" class="chatbox" draggable="false"></div>
+         <button type="button" class="menuareaclick" id="menuareaclick" draggable="false" onclick="uncheckCheckbox()" ></button>
+        <div class="menuslide">
+
+            
+            <h1 class="welcomeusertext">
+                Welcome User
+            </h1>
+            <div class="menuline"></div>
+            <button class="manageuserbutton" id="manageuserbutton" draggable="false"><img class='manageuserimg' src="images/Admin Settings Male.svg"></button>
+            <button class="resetbutton" id="resetbutton" draggable="false"><h1 class="resetconversation">Reset Conversation</h1></button>
+        </div>
+
+    </div>
+</body>
+<script src="frontend.js"></script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "interactive-terminal",
+  "version": "1.0.0",
+  "description": "Your app description",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "electron": "^26.2.1",
+    "node-pty": "^0.10.1",
+    "ws": "^8.8.1",
+    "xterm-addon-fit": "^0.8.0"
+  }
+}
