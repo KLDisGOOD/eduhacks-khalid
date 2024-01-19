@@ -34,7 +34,7 @@ npm start
 
 
 # API File
-To allow judges to see the code, an API file is provided. However, the API is hosted using [Railway](railway.app)
+To allow judges to see the code, an API file is provided. However, the API is hosted using [pythonanywhere](pythonanywhere.com)
 
 
 
