@@ -4,7 +4,7 @@ var pty = require('node-pty');
 
 const wss = new WebSocket.Server({ port: 6060 })
 
-console.log("Socket is up and running...")
+console.log("Started")
 
 var shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
 var ptyProcess = pty.spawn(shell, [], {

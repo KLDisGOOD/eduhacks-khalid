@@ -1,5 +1,5 @@
 {
-  "name": "interactive-terminal",
+  "name": "vuba",
   "version": "1.0.0",
   "description": "Your app description",
   "main": "main.js",
@@ -12,6 +12,6 @@
     "electron": "^26.2.1",
     "node-pty": "^0.10.1",
     "ws": "^8.8.1",
-    "xterm-addon-fit": "^0.8.0"
+    "xterm": "^5.3.0"
   }
 }

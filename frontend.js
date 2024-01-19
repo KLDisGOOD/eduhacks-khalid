@@ -1,19 +1,16 @@
-
-
 const socket = new WebSocket("ws://localhost:6060");
 
-var term = new Terminal({
-    rows: 10,
-        cols: 39, //any value
+const term = new Terminal({
+    rows: 16,
+    cols: 55, 
+    fontSize: 7,
         
-        fontSize: 10,
         theme: {
-            background: "black",}
-
-    
+            background: "black",
+            foreground: "#A688AB",
+            cursorstyle: 'underline',
+        }
 });
-
-
 term.open(document.getElementById('terminal'));
 
 function init() {
@@ -39,7 +36,7 @@ function init() {
                 command = '';
                 break;
             case '\u007F': // Backspace (DEL)
-                // Do not delete the prompt
+                
                 if (term._core.buffer.x > 2) {
                     term.write('\b \b');
                     if (command.length > 0) {
@@ -59,6 +56,28 @@ function init() {
     });
 }
 
+
+
+
+function pastecommand(pastedcomnd) {
+    var index = 0;
+
+    function typeNextCharacter() {
+        if (index < pastedcomnd.length) {
+            term.write(pastedcomnd.charAt(index));
+            command += pastedcomnd.charAt(index);
+            index++;
+            setTimeout(typeNextCharacter, 50);
+        } 
+    }
+
+    typeNextCharacter();
+}
+
+
+
+
+
 function clearInput(command) {
     var inputLengh = command.length;
     for (var i = 0; i < inputLengh; i++) {
@@ -71,10 +90,13 @@ function prompt(term) {
 }
 
 
-socket.onmessage = (event) => {
-    term.write(event.data);
-}
+let storedOutput = ''; // initialize to store the output
 
+socket.onmessage = (event) => {
+    const newData = event.data; 
+    storedOutput += newData; 
+    term.write(newData); 
+};
 function runCommand(term, command) {
     if (command.length > 0) {
         clearInput(command);
@@ -83,4 +105,166 @@ function runCommand(term, command) {
     }
 }
 
+
+
+
+const sendBtn = document.querySelector('.sendbutton');
+const chatBody = document.querySelector('.chatbox');
+const msgTxt = document.querySelector('#mytextarea');
+let reply = 0
+
+
+
+
+
+
+const replies = [
+
+
+ 'Hello, I am Vuba, your virtual assistant. How can I help you?',
+ 'I can help you with the following:',
+ '1. I can help you with your account related queries.',
+]
+
+function typingDots() {
+ return `
+     <div class="typing">
+         <span class="circle scaling"></span>
+         <span class="circle bouncing"></span>
+         <span class="circle scaling"></span>
+     </div>
+     
+ `;
+}
+
+function chatReply(message) {
+    let newMsg = document.createElement('div');
+    newMsg.setAttribute('class', 'chat-wrapper');
+  
+    let vubapfpDiv = document.createElement('div');
+    vubapfpDiv.setAttribute('class', 'vubapfp');
+    let vubapfpImg = document.createElement('img');
+    vubapfpImg.setAttribute('src', 'images/V.svg');
+    vubapfpImg.setAttribute('class', 'vubapfpimg');
+    vubapfpDiv.appendChild(vubapfpImg);
+    newMsg.appendChild(vubapfpDiv);
+  
+    let chatReplySpan = document.createElement('span');
+    chatReplySpan.setAttribute('class', 'chat-reply');
+    chatReplySpan.innerHTML = typingDots();
+    newMsg.appendChild(chatReplySpan);
+  
+    chatBody.appendChild(newMsg);
+  
+    let typing = newMsg.querySelector('.typing');
+    setTimeout(() => {
+      typing.classList.add('hidden');
+    }, 100);
+  
+    setTimeout(() => {
+      let chatReply = newMsg.querySelector('.chat-reply');
+      chatReply.innerHTML = `<label>${message}</label>`;
+      chatBody.scrollTop = chatBody.scrollHeight;
+      typing.innerHTML = ''; 
+    }, 100);
+  }
+  
+  
+function chatSent(message) {
+ let d = new Date();
+
+ let newMsg = document.createElement('div');
+ newMsg.setAttribute('class', 'chat-wrapper-sent');
+ 
+ newMsg.style.wordwrap = 'break-word'; 
+ newMsg.innerHTML = `
+ <div class="userpfp"><img src="images/User.svg" class="userpfpimg"></div>
+ <span class="chat-sent">
+ ${message}
+ </span>
+ `;
+ document.getElementById('greettext').hidden = true;
+ document.getElementById('firstvuba').hidden = true;
+ 
+ chatBody.appendChild(newMsg);
+
+
+}
+
+
+function clearconvo() {
+
+    location.reload()
+}
+
+function sendB() {
+if(msgTxt.value == '') {
+ msgTxt.focus();
+ return;
+}
+
+
+
+var userInputValue = document.getElementById('mytextarea').value;
+   
+               // Define the JSON data to be sent in the POST request
+               var postData = {
+                   user_input: userInputValue
+               };
+   
+             
+               var serverAddress = 'https:vuba.pythonanywhere.com'
+                                            
+               fetch(serverAddress + '/send', {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json'
+                   },
+                   body: JSON.stringify(postData),
+                   mode: 'cors',
+               })
+               
+               .then(response => response.json())
+               .then(data => {
+                   // Display the server response in the 'response' div
+                   var firstResponse = data.first_response;
+                   var command = data.command;
+                 
+    
+
+    
+
+chatSent(msgTxt.value);
+chatReply(firstResponse);
+
+
+chatBody.scrollTo = chatBody.scrollHeight;
+msgTxt.value = '';
+msgTxt.focus();
+console.log('Command received:', command);
+
+pastecommand(command)
+
+
+               }
+                
+           ) }
+
+msgTxt.addEventListener('keyup', function(e) {
+ if(e.keyCode === 13) {
+     sendBtn.click();
+ }
+});
+
+
+ function uncheckCheckbox() {
+     let checkbox = document.getElementById('menuignore');
+     checkbox.checked = false;
+       }
+   
+   
 init();
+
+
+
+
